@@ -8,8 +8,8 @@ export default function App() {
     return (
         <div>
            <Header />
-           <Link to="/">Home</Link>
-           <Link to="/cart">Cart</Link>
+           <Link to="/" className="link">Home</Link>
+           <Link to="/cart" className="link">Cart</Link>
 
            <Routes>
                <Route path="/" element={<Photos/>}/>

@@ -5,8 +5,6 @@ body {
 
 header {
     background-color: #e77641;
-    width: 100%;
-    margin: 0;
     padding: 1em;
 }
 
@@ -14,4 +12,36 @@ header h1 {
     font-size: 2rem;
     margin: 0;
     color: #fff;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+svg {
+    padding: 1em;
+    align-self: baseline;
+}
+
+.link {
+    text-decoration: none;
+    cursor: pointer;
+    color: #e77641;
+    margin: 0.5em;
+    padding: 0.1em;
+}
+
+.link:hover {
+    background-color: rgba(231, 118, 65, 0.2);
+}
+
+.header-link {
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.header-link:hover {
+    border-bottom: 1px solid #a53908;
 }
