@@ -43,5 +43,5 @@ svg {
 }
 
 .header-link:hover {
-    border-bottom: 1px solid #a53908;
+    color:rgba(53, 45, 42, 0.822);
 }
