@@ -15,8 +15,21 @@ function ContextProvider({children}) {
             })
     }, []);
 
+    function toggleFavorite(id) {
+        console.log(id)
+        const updatedObj = picsArray.filter(pic => pic.id === id)
+        console.log(updatedObj)
+
+        setPicsArray(prevState => {
+            return [
+                ...prevState,
+                updatedObj
+            ]
+        })
+    }
+
     return (
-        <Context.Provider value={{picsArray}}>
+        <Context.Provider value={{picsArray, toggleFavorite}}>
             {children}
         </Context.Provider>
     )

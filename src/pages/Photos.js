@@ -12,6 +12,7 @@ export default function Photos() {
         return <Image
                     url={pic.url}
                     key={pic.id}
+                    id={pic.id}
                     className={getClass(index)}
                 />
     })
