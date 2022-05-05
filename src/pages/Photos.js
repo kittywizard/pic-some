@@ -10,10 +10,7 @@ export default function Photos() {
 
     const picsMap = picsArray.map((pic, index) => {
         return <Image
-                    url={pic.url}
-                    key={pic.id}
-                    id={pic.id}
-                    isFavorite={pic.isFavorite}
+                    img={pic}
                     className={getClass(index)}
                 />
     })

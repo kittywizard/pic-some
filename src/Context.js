@@ -22,13 +22,17 @@ function ContextProvider({children}) {
         setPicsArray(updatedArray)
     }
 
-    function addToCart(id) {
-        const cart = picsArray.filter(pic => id === pic.id); //pulling an array. just need the object 
-        setCartItems(prevState => [...prevState, cart]);
+    function addToCart(item) {
+        setCartItems(prevState => [...prevState, item]);
     }
 
+    function removeFromCart(id) {
+        setCartItems(prevItems => prevItems.filter(item => item.id !== id))
+    }
+
+
     return (
-        <Context.Provider value={{picsArray, toggleFavorite, addToCart}}>
+        <Context.Provider value={{picsArray, toggleFavorite, addToCart, removeFromCart, cartItems}}>
             {children}
         </Context.Provider>
     )
