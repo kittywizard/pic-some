@@ -13,6 +13,7 @@ export default function Photos() {
                     url={pic.url}
                     key={pic.id}
                     id={pic.id}
+                    isFavorite={pic.isFavorite}
                     className={getClass(index)}
                 />
     })

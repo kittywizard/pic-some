@@ -6,6 +6,7 @@ const Context = React.createContext();
 function ContextProvider({children}) {
 
     const [picsArray, setPicsArray] = useState([]);
+    const [cartItems, setCartItems] = useState([]);
 
     useEffect(() => {
         fetch(`https://raw.githubusercontent.com/bobziroll/scrimba-react-bootcamp-images/master/images.json`)
@@ -16,20 +17,18 @@ function ContextProvider({children}) {
     }, []);
 
     function toggleFavorite(id) {
-        console.log(id)
-        const updatedObj = picsArray.filter(pic => pic.id === id)
-        console.log(updatedObj)
+        const updatedArray = picsArray.map(pic => id === pic.id ? {...pic, isFavorite: !pic.isFavorite} : pic)
 
-        setPicsArray(prevState => {
-            return [
-                ...prevState,
-                updatedObj
-            ]
-        })
+        setPicsArray(updatedArray)
+    }
+
+    function addToCart(id) {
+        const cart = picsArray.filter(pic => id === pic.id); //pulling an array. just need the object 
+        setCartItems(prevState => [...prevState, cart]);
     }
 
     return (
-        <Context.Provider value={{picsArray, toggleFavorite}}>
+        <Context.Provider value={{picsArray, toggleFavorite, addToCart}}>
             {children}
         </Context.Provider>
     )
